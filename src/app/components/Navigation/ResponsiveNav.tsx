@@ -1,0 +1,24 @@
+"use client"
+import { useState } from "react"
+import MobileNav from "./MobileNav"
+import Nav from "./Nav"
+
+
+
+
+const ResponsiveNav = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [showNav, setShowNav] = useState(false);
+  const openNavHandler = () => setShowNav(true);
+  const closeNavHandler = () => setShowNav(false)
+
+
+  return (
+    <div>
+      <Nav openNav={openNavHandler}/>
+      <MobileNav showNav={showNav} closeNav={closeNavHandler}/>
+    </div>
+  )
+}
+
+export default ResponsiveNav
